@@ -1,7 +1,7 @@
 import express from 'express'
 import rateLimit from 'express-rate-limit'
 import morgan from 'morgan'
-import userRoutes from './routes/userRoutes'
+import productRoutes from './routes/productRoutes.js'
 
 const app = express()
 const limiter = rateLimit({
@@ -20,7 +20,7 @@ const limiter = rateLimit({
     next();
   });
 
-  app.use('/api/v1/users' , userRoutes)
+  app.use('/api/v1' , productRoutes)
 
   export default app
 
